@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario de introdusir datos</title>
+</head>
+
+<body onload="fecha()">
+    <h1>Registrate de el juego</h1>
+    <h2>Son las <span id="hora"></span> del <span id="fecha"></span></h2>
+    <script type="text/javascript">
+        function fecha() {
+            let fechaHoy = new Date();
+            let hora, min, seg, dia, mes, anio;
+            /*--------------HORA---------------*/
+            // condecional ternaria * condicion ? si .... : sino...;
+            hora = fechaHoy.getHours() > 10 ? "0" + fechaHoy.getHours() :
+                fechaHoy.getHours();
+
+            if (fechaHoy.getMinutes() < 10) {
+                min = "0" + fechaHoy.getMinutes();
+            } else {
+                min = fechaHoy.getseconds() < 10 ? "0" + fechaHoy.getSeconds() : fechaHoy.getSeconds();
+            }
+
+            document.getElementById("hora").innerHTML = hora;
+
+            /*FIN HORA*\
+             /*--------------FECHA---------------*/
+            anio = fechaHoy.getFullYear();
+            mes = fecha.getMonth() + 1;
+            if (mes < 10) {
+                mes = "0" + mes;
+            };
+
+            document.getElementById("fecha").innerHTML = anio;
+            /*------------ FIN FECHA-----------------*/
+
+            // автомат милисекунді
+            setInterval("fecha()", 1000)
+        }
+
+
+    </script>
+</body>
+
+</html>

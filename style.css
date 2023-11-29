@@ -1,0 +1,120 @@
+@font-face {
+    font-family: game;
+    src: url('../game-of-thrones/Game of Thrones.ttf')
+}
+
+/*Index*/
+h1 {
+    font-family: game;
+}
+
+body {
+    text-align: center;
+    margin: 0 auto;
+}
+
+div#pp {
+    width: 500px;
+    margin: 0 auto;
+}
+
+/*estilos*/
+div#f {
+    width: 700px;
+    margin: 0 auto;
+}
+
+ol {
+    text-align: left;
+    padding-left: 200px;
+}
+
+p {
+    font-size: 14pt
+}
+
+#formulario {
+    /*background-image:url("../fondos/luces.jpg");*/
+    background-size: cover;
+
+}
+
+/*Juego trono*/
+
+#pertrono {
+    position: relative;
+    left: -230px;
+}
+
+#trono {
+    position: relative;
+    left: 50px;
+}
+
+#ganador {
+    position: absolute;
+    top: 0px;
+    left: 48%;
+    top: 120px;
+}
+
+#izq {
+    float: left;
+    padding-left: 20px;
+}
+
+#drch {
+    float: right;
+    padding-right: 20px;
+}
+
+/*formulario*/
+#fregistro span {
+    font-weight: bold;
+}
+
+#fres,
+#listado {
+    text-align: left
+}
+
+#fregistro {
+    width: 400px;
+    margin: 0 auto;
+    border: solid 1px black;
+    padding: 35px;
+    background-color: #D5D1D1
+}
+
+#listado {
+    width: 900px;
+    margin: 20px auto;
+    border: solid 1px black;
+    padding: 15px;
+    background-color: #A2A0A0
+}
+
+table {
+    margin: 0 auto;
+}
+
+table,
+td,
+tr,
+th {
+    border: solid 1px black;
+    border-collapse: collapse;
+    background-color: #FFF
+}
+
+th {
+    padding: 0 10px;
+}
+
+#fregistro input {
+    float: right;
+}
+
+#fregistro label {
+    float: left;
+}
