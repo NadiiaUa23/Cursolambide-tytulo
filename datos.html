@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>formulario de introdusir datos</title>
-</head>
+    <link href="/style.css" rel="stylesheet">
 
 <body onload="fecha()">
     <h1>Registrate de el juego</h1>
     <h2>Son las <span id="hora"></span> del <span id="fecha"></span></h2>
+    <br><br />
+    <form>
+        <label for="">Nombre:</label><input type="text" name="nom" /> <br />
+
+        <label for="">Apellido: </label><input type="text" name="ape" /><br />
+
+        <label for="">DNI:</label><input type="text" name="dni" /><br />
+
+        <label for="">Telefono:</label><input type="tel" name="tel" /><br />
+
+        <label for="">Email:</label><input type="email" required /><br />
+        <button type="button">Registro</button><br />
+
+    </form>
+
     <script type="text/javascript">
         function fecha() {
             let fechaHoy = new Date();
@@ -38,7 +53,7 @@
             dia = fechaHoy.getDate() < 10 ? "0" + fechaHoy.getDate() : fechaHoy.getDate();
 
 
-            document.getElementById("fecha").innerHTML = dia + "/" + mes + "/" anio;
+            document.getElementById("fecha").innerHTML = dia + "/" + mes + "/" + anio;
 
             /*------------ FIN FECHA-----------------*/
 
@@ -46,7 +61,56 @@
             setInterval("fecha()", 1000)
         }
 
+        function registro() {
+            if (document.formularioDeRegistro.nom.value == "") {
+                alert("Nombre sin completar");
+            } else if (document.formularioDeRegistro.ape.value == "") {
+                alert("Apellido sin completar");
+            } else if (comprobarDNI(document.formularioDeRegistro.dni.value) == false) {
+                alert("dni incompleto");
+            } else if (comprobarTel(document.formularioDeRegistro.tel.value) == false) {
+                alert("telefono incompleto");
+            } else {
+                if (document.formularioDeRegistro.em.value == "") {
+                    alert("email incompleto");
+                } else if (document.formularioDeRegistro.em.value.lastIndexOf(".") < 0) {
+                    alert("al email le falta dominio ejm: .com, .es, .org");
+                } else if (document.formularioDeRegistro.em.value.lastIndexOf("@") < 0) {
+                    alert("Al email le falta la @");
+                } else {
+                    alert("Regitro completo : -)");
+                };
 
+
+            }
+
+            function comprobarTel(dato) {
+                if (Number(dato) && dato.length == 9) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            function comprobarDNI(dato) {
+                let arrayLetras = ["A", "B", "C", "D", "E", "F",
+                    "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
+                    "Q", "R", "T", "U", "V", "W", "X", "Y", "Z"];
+                let i = [0];
+                let correcto = false;
+                if (dato.length == 9) {
+                    let taxto = dato[8].toUpperCase();
+                    while (i < arrayLetras.length && correcto == false) {
+                        if (texto == arrayLetras[i]) {
+                            correcto == true;
+                            return true;
+                        }
+                        i++;
+                    }
+                }
+            }else {
+                return false;
+            }
+            alert(comprobarDNI("36434"))
     </script>
 </body>
 
