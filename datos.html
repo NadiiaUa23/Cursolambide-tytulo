@@ -35,7 +35,11 @@
                 mes = "0" + mes;
             };
 
-            document.getElementById("fecha").innerHTML = anio;
+            dia = fechaHoy.getDate() < 10 ? "0" + fechaHoy.getDate() : fechaHoy.getDate();
+
+
+            document.getElementById("fecha").innerHTML = dia + "/" + mes + "/" anio;
+
             /*------------ FIN FECHA-----------------*/
 
             // автомат милисекунді
